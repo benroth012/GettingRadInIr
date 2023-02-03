@@ -1,12 +1,6 @@
-import { Button, Jumbotron, CardGroup, Card, Modal, Form, Row, Col, Container, Tab, ListGroup } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import {Button, Card, CardGroup, Col, Container, Form, Jumbotron, ListGroup, Modal, Row, Tab} from 'react-bootstrap';
 import bgimage from '../Photography/Buildings/TheJames2.jpg';
-import icon from '../Icons/BlockO-Scarlet.png'
-import tace_icon from './Education/EducationPhotos/tace_icon.svg';
-import catheter_icon from './Education/EducationPhotos/catheter_icon.png';
-import heart_icon from './Education/EducationPhotos/heart_icon.png';
-import lungs_icon from './Education/EducationPhotos/lungs_icon.png';
-import React, { Component } from 'react';
+import React from 'react';
 
 class AdminFAQ extends React.Component {
     constructor(props) {
@@ -34,7 +28,7 @@ class AdminFAQ extends React.Component {
     }
 
     componentDidMount() {
-        const { error, isLoaded, faqs, categories, tempFAQs } = this.state;
+        const {error, isLoaded, faqs, categories, tempFAQs} = this.state;
         fetch(window.apilink + "/server/allfaqs")
             .then(res => res.json())
             .then(
@@ -95,12 +89,12 @@ class AdminFAQ extends React.Component {
     }
 
     handleCategoryShowHide() {
-        this.setState({ showHideCat: !this.state.showHideCat })
+        this.setState({showHideCat: !this.state.showHideCat})
 
     }
 
     handleFAQShowHide() {
-        this.setState({showHideFAQ: !this.state.showHideFAQ })
+        this.setState({showHideFAQ: !this.state.showHideFAQ})
     }
 
     categoryNameHandler(event) {
@@ -122,13 +116,13 @@ class AdminFAQ extends React.Component {
     }
 
     handleFAQS(name) {
-        const { faqs, tempFAQs } = this.state;
+        const {faqs, tempFAQs} = this.state;
         const tfaqs = [];
         for (var i = 0; i < faqs.length; i++) {
             if (faqs[i].name == name) {
                 tfaqs.push(faqs[i]);
             }
-            this.setState({ 
+            this.setState({
                 tempFAQs: tfaqs,
                 categoryName: name
             })
@@ -195,32 +189,40 @@ class AdminFAQ extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, faqs, categories, tempFAQs } = this.state;
+        const {error, isLoaded, faqs, categories, tempFAQs} = this.state;
         return (
             <div className="App">
-                <Jumbotron className="jumbotron-special roboto white-text" style={{ backgroundImage: `url(${bgimage})`, backgroundSize: `cover`, backgroundPosition: `center top`, height: `10%` }}>
-                    <h1 style={{ paddingTop: `10%` }}>FAQ</h1>
-                    <p style={{ fontSize: `1.5em` }}>View Frequently Asked Questions Below.</p>
+                <Jumbotron className="jumbotron-special roboto white-text" style={{
+                    backgroundImage: `url(${bgimage})`,
+                    backgroundSize: `cover`,
+                    backgroundPosition: `center top`,
+                    height: `10%`
+                }}>
+                    <h1 style={{paddingTop: `10%`}}>FAQ</h1>
+                    <p style={{fontSize: `1.5em`}}>View Frequently Asked Questions Below.</p>
                 </Jumbotron>
 
                 <Container fluid>
-                    <Row style={{ marginTop: `30px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px` }}>
+                    <Row style={{marginTop: `30px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px`}}>
                         <Col sm>
                             <Tab.Container id="list-group-tabs-example" defaultActiveKey="#0">
                                 <Row>
                                     <Col sm={4}>
-                                        <ListGroup style={{ marginBottom: `10px` }}>
-                                        {categories.map((category, index) =>
-                                        <ListGroup.Item onClick={() => this.handleFAQS(category.name)} action href={"#" + index}>
-                                            <Row>
-                                                <Col sm={2}>
-                                                    <Button variant="danger" style={{ paddingLeft: `10px`, paddingRight: `10px`}} onClick={() => this.deleteCategory(category.id)}>x</Button>
-                                                </Col>
-                                                <Col sm={10}>
-                                                    {category.name}
-                                                </Col>
-                                            </Row>
-                                        </ListGroup.Item>
+                                        <ListGroup style={{marginBottom: `10px`}}>
+                                            {categories.map((category, index) =>
+                                                <ListGroup.Item onClick={() => this.handleFAQS(category.name)} action
+                                                                href={"#" + index}>
+                                                    <Row>
+                                                        <Col sm={2}>
+                                                            <Button variant="danger"
+                                                                    style={{paddingLeft: `10px`, paddingRight: `10px`}}
+                                                                    onClick={() => this.deleteCategory(category.id)}>x</Button>
+                                                        </Col>
+                                                        <Col sm={10}>
+                                                            {category.name}
+                                                        </Col>
+                                                    </Row>
+                                                </ListGroup.Item>
                                             )}
                                         </ListGroup>
                                     </Col>
@@ -232,10 +234,26 @@ class AdminFAQ extends React.Component {
                                                         <Col>
                                                             {tempFAQs.map((tfaq, index) =>
                                                                 <Card>
-                                                                    <Button variant="danger" style={{ paddingLeft: `10px`, paddingRight: `10px`}} onClick={() => this.deleteFaq(tfaq.id)}>x</Button>
-                                                                    <Card.Body style={{ marginLeft: 0, marginRight: 0 }}>
-                                                                        <Card.Text style={{ fontWeight: 'bold', fontSize: '25px', marginBottom: '20px', marginLeft: '5 px', textAlign: 'left', }}>{tfaq.question}</Card.Text>
-                                                                        <Card.Text style={{ fontWeight: '500', fontSize: '25px', marginBottom: '20px', marginLeft: '5 px', textAlign: 'left' }}>{tfaq.answer}</Card.Text>
+                                                                    <Button variant="danger" style={{
+                                                                        paddingLeft: `10px`,
+                                                                        paddingRight: `10px`
+                                                                    }}
+                                                                            onClick={() => this.deleteFaq(tfaq.id)}>x</Button>
+                                                                    <Card.Body style={{marginLeft: 0, marginRight: 0}}>
+                                                                        <Card.Text style={{
+                                                                            fontWeight: 'bold',
+                                                                            fontSize: '25px',
+                                                                            marginBottom: '20px',
+                                                                            marginLeft: '5 px',
+                                                                            textAlign: 'left',
+                                                                        }}>{tfaq.question}</Card.Text>
+                                                                        <Card.Text style={{
+                                                                            fontWeight: '500',
+                                                                            fontSize: '25px',
+                                                                            marginBottom: '20px',
+                                                                            marginLeft: '5 px',
+                                                                            textAlign: 'left'
+                                                                        }}>{tfaq.answer}</Card.Text>
                                                                     </Card.Body>
                                                                 </Card>
                                                             )}
@@ -251,11 +269,13 @@ class AdminFAQ extends React.Component {
                     </Row>
                     <Row>
                         <Col sm={4}>
-                            <Button variant="success" style={{ paddingLeft: `40px`, paddingRight: `40px` }} onClick={() => this.handleCategoryShowHide()}>Add New Category</Button>
+                            <Button variant="success" style={{paddingLeft: `40px`, paddingRight: `40px`}}
+                                    onClick={() => this.handleCategoryShowHide()}>Add New Category</Button>
 
                         </Col>
                         <Col sm={8}>
-                            <Button variant="success" style={{ paddingLeft: `40px`, paddingRight: `40px` }} onClick={() => this.handleFAQShowHide()}>Add New FAQ</Button>
+                            <Button variant="success" style={{paddingLeft: `40px`, paddingRight: `40px`}}
+                                    onClick={() => this.handleFAQShowHide()}>Add New FAQ</Button>
 
                         </Col>
                     </Row>
@@ -276,16 +296,18 @@ class AdminFAQ extends React.Component {
                         <Modal.Body>
                             <Form.Group controlId="formQuestion">
                                 <Form.Label>Category</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Category Name" onChange={this.categoryNameHandler} />
+                                <Form.Control type="text" placeholder="Enter Category Name"
+                                              onChange={this.categoryNameHandler}/>
                             </Form.Group>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={() => this.handleCategoryShowHide()} variant="warning">Cancel</Button>
-                            <Button onClick={() => this.handleCategoryShowHide()} variant="success" type="submit">Submit</Button>
+                            <Button onClick={() => this.handleCategoryShowHide()} variant="success"
+                                    type="submit">Submit</Button>
                         </Modal.Footer>
                     </Form>
                 </Modal>
-                
+
                 <Modal
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
@@ -301,16 +323,17 @@ class AdminFAQ extends React.Component {
                         <Modal.Body>
                             <Form.Group controlId="formQuestion">
                                 <Form.Label>Question</Form.Label>
-                                <Form.Control type="text" placeholder="Enter FAQ" onChange={this.questionHandler} />
+                                <Form.Control type="text" placeholder="Enter FAQ" onChange={this.questionHandler}/>
                             </Form.Group>
                             <Form.Group controlId="formAnswer">
                                 <Form.Label>Answer</Form.Label>
-                                <Form.Control type="text" placeholder="Enter FAQ answer" onChange={this.answerHandler} />
+                                <Form.Control type="text" placeholder="Enter FAQ answer" onChange={this.answerHandler}/>
                             </Form.Group>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={() => this.handleFAQShowHide()} variant="warning">Cancel</Button>
-                            <Button onClick={() => this.handleFAQShowHide()} variant="success" type="submit">Submit</Button>
+                            <Button onClick={() => this.handleFAQShowHide()} variant="success"
+                                    type="submit">Submit</Button>
                         </Modal.Footer>
                     </Form>
                 </Modal>
@@ -318,4 +341,5 @@ class AdminFAQ extends React.Component {
         );
     }
 }
+
 export default AdminFAQ;
