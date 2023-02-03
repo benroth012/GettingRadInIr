@@ -54,10 +54,11 @@ public class MainController {
   private DBFileStorageService dbFileStorageService;
 
   // DEPLOYMENT OPTION
-  public static final String crossOriginName = "https://gentle-retreat-02796.herokuapp.com";
+  //public static final String crossOriginName = "https://gentle-retreat-02796.herokuapp.com";
   
   //LOCAL OPTION
-  //public static final String crossOriginName = "http://localhost:3000";
+  public static final String crossOriginName = "http://localhost:3000";
+
 
 
 

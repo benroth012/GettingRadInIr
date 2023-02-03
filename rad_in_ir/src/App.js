@@ -34,12 +34,12 @@ import { PleurXFAQ } from './components/Education/PleurXFAQ'
 import './App.css';
 
 // DEPLOYMENT OPTION
-window.apilink = "https://hidden-island-85538.herokuapp.com"
-window.currentlink = "https://gentle-retreat-02796.herokuapp.com"
+//window.apilink = "https://hidden-island-85538.herokuapp.com"
+//window.currentlink = "https://gentle-retreat-02796.herokuapp.com"
 
 // LOCAL OPTION
-//window.apilink = "http://localhost:8080"
-//window.currentlink = "http://localhost:3000"
+window.apilink = "http://localhost:8080"
+window.currentlink = "http://localhost:3000"
 
 const PatientRoute = ({exact, path, component: Component}) => (
   <Route exact={exact} path={path} render={(props) => (

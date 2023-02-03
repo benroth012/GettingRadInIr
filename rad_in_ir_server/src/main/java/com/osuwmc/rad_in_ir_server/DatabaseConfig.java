@@ -1,4 +1,5 @@
 // DEPLOYMENT OPTION
+/*
 package com.osuwmc.rad_in_ir_server;
 
 import com.zaxxer.hikari.*;
@@ -19,4 +20,4 @@ public class DatabaseConfig {
       return new HikariDataSource(config);
   }
 }
-
+*/
