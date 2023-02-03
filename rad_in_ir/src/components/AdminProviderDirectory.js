@@ -179,6 +179,7 @@ class AdminProviderDirectory extends React.Component {
   }
 
   handlePhysicianSubmit(event) {
+    event.preventDefault();
     if (this.state.physicianName.length > 0 && this.state.physicianLink.length > 0 && this.state.physicianImage.length > 0) {
       fetch(window.apilink + '/server/addphysician', {
         method: 'POST',
@@ -198,6 +199,7 @@ class AdminProviderDirectory extends React.Component {
   }
 
   handleProviderSubmit(event) {
+    event.preventDefault();
     if (this.state.providerName.length > 0 && this.state.providerImage.length > 0) {
       fetch(window.apilink + '/server/addprovider', {
         method: 'POST',
