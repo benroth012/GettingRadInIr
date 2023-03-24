@@ -2,7 +2,6 @@
 //
 //
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
 import logo from "../OSUWMC_Logos/Horizontal Logo/Gray_Horizontal.png";
 
 export const Footer = () => (
@@ -11,10 +10,13 @@ export const Footer = () => (
             <div className="row">
                 <div className="col">
                     <a href="/">
-                        <img style={{ width: '100%', height: `auto`}} className="footer-logo" src={logo} alt="OSU Medical Center Logo"></img>
+                        <img style={{width: '100%', height: `auto`}} className="footer-logo" src={logo}
+                             alt="OSU Medical Center Logo"></img>
                     </a>
-                    <p className="gray-text copyright-text">Copyright © 2021 The Ohio State University Wexner Medical Center</p>
-                    <p className="font-weight-bold text-uppercase"><a href="adminlogin" className="footer-c">Admin</a></p>
+                    <p className="gray-text copyright-text">Copyright © 2021 The Ohio State University Wexner Medical
+                        Center</p>
+                    <p className="font-weight-bold text-uppercase"><a href="adminlogin" className="footer-c">Admin</a>
+                    </p>
                 </div>
 
                 <div className="col">

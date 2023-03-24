@@ -1,39 +1,39 @@
 .App {
-  font: Arial;
-  text-align: center;
-  background-color: #e9ecef;
+    font: Arial;
+    text-align: center;
+    background-color: #e9ecef;
 }
 
 .App-header {
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #666666;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #666666;
 }
 
 .App-button {
-  color: white;
-  padding: 10px;
-  margin: 20px;
-  background-color: #bb0000;
-  border-radius: 4px;
-  border: none;
-  font-family: 'Roboto', sans-serif;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    background-color: #bb0000;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .App-button-admin {
-  bottom: 40px;
-  right: 20px;
-  color: black;
-  padding: 20px;
-  margin: 20px;
-  background-color: transparent;
-  border: none;
-  font-family: 'Roboto', sans-serif;
-  display: block;
+    bottom: 40px;
+    right: 20px;
+    color: black;
+    padding: 20px;
+    margin: 20px;
+    background-color: transparent;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    display: block;
 }
 
 .App-button-admin:hover {
@@ -43,7 +43,7 @@
 }
 
 .App-button:hover {
-  background-color: darkred;
+    background-color: darkred;
 }
 
 .Secondary-button {
@@ -54,14 +54,14 @@
     background-color: white;
     border-radius: 4px;
     font-family: 'Roboto', sans-serif;
-  }
-  
-  .Secondary-button:hover {
+}
+
+.Secondary-button:hover {
     background-color: darkred;
-  }
+}
 
 .App-card {
-    background-color:white;
+    background-color: white;
     width: 400px;
     margin: 20px;
     padding: 15px;
@@ -120,10 +120,10 @@ a.bottom-nav-link {
 }
 
 li.link-wrapper > a.active {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-.jumbotron-special{
+.jumbotron-special {
     height: 60vh;
     text-shadow: 1.5px 1.5px #333333;
     border-radius: 0px;
@@ -133,20 +133,68 @@ li.link-wrapper > a.active {
     Text Colors
 */
 
-.footer-a:link    {color:#000;}  /* unvisited link  */
-.footer-a:visited {color:#000;}  /* visited link    */
-.footer-a:hover   {color:#bb0000;}  /* mouse over link */
-.footer-a:active  {color:#000;}  /* selected link   */ 
-.footer-b:link    {color:#bb0000;}  /* unvisited link  */
-.footer-b:visited {color:#bb0000;}  /* visited link    */
-.footer-b:hover   {color:#000;}  /* mouse over link */
-.footer-b:active  {color:#bb0000;}  /* selected link   */ 
-.footer-c:link    {color:#666666;}  /* unvisited link  */
-.footer-c:visited {color:#666666;}  /* visited link    */
-.footer-c:hover   {color:#bb0000;}  /* mouse over link */
-.footer-c:active  {color:#bb0000;}  /* selected link   */ 
+.footer-a:link {
+    color: #000;
+}
 
-    /*Primary Palette*/
+/* unvisited link  */
+.footer-a:visited {
+    color: #000;
+}
+
+/* visited link    */
+.footer-a:hover {
+    color: #bb0000;
+}
+
+/* mouse over link */
+.footer-a:active {
+    color: #000;
+}
+
+/* selected link   */
+.footer-b:link {
+    color: #bb0000;
+}
+
+/* unvisited link  */
+.footer-b:visited {
+    color: #bb0000;
+}
+
+/* visited link    */
+.footer-b:hover {
+    color: #000;
+}
+
+/* mouse over link */
+.footer-b:active {
+    color: #bb0000;
+}
+
+/* selected link   */
+.footer-c:link {
+    color: #666666;
+}
+
+/* unvisited link  */
+.footer-c:visited {
+    color: #666666;
+}
+
+/* visited link    */
+.footer-c:hover {
+    color: #bb0000;
+}
+
+/* mouse over link */
+.footer-c:active {
+    color: #bb0000;
+}
+
+/* selected link   */
+
+/*Primary Palette*/
 
 .black-text {
     color: black;
@@ -165,7 +213,7 @@ li.link-wrapper > a.active {
 }
 
 
-  /*Secondary Palette*/
+/*Secondary Palette*/
 
 .hope-yellow-text {
     color: #fed141;
@@ -203,7 +251,7 @@ li.link-wrapper > a.active {
     color: #ffeaae;
 }
 
-    /*Metallic Colors*/
+/*Metallic Colors*/
 
 .code-silver-text {
     color: #8a8d8f;
@@ -213,7 +261,7 @@ li.link-wrapper > a.active {
     color: #85714d;
 }
 
-    /*Web Color Palette*/
+/*Web Color Palette*/
 
 .light-gray-text {
     color: #f2f3f4;
@@ -249,9 +297,9 @@ li.link-wrapper > a.active {
 }
 
 .proxima-nova {
-	font-family: 'proxima-nova', sans-serif;
+    font-family: 'proxima-nova', sans-serif;
 }
 
 .capita {
-	font-family: 'capita', sans-serif;
+    font-family: 'capita', sans-serif;
 }
