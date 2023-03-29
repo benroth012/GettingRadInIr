@@ -226,19 +226,19 @@ class AdminVideos extends React.Component {
                                         </Modal>
                                     </Col>
                                     <Col sm={8}>
-                                        <Tab.Content>
+                                    <Tab.Content className='videoContainer'>
                                             {items.map((item, index) =>
-                                                <Tab.Pane eventKey={"#" + index}>
-                                                    <ResponsiveEmbed aspectRatio="16by9">
+                                                <Tab.Pane eventKey={"#" + index} >                                                        
                                                         <iframe src={item.link}
-                                                                frameBorder='0'
+                                                                frameborder='0'
                                                                 allow='autoplay; encrypted-media'
-                                                                allowFullScreen="0"
+                                                                allowfullscreen="0"
                                                                 title='video'
+                                                                className = 'responsive-iframe'
+                                                                
                                                         />
-                                                    </ResponsiveEmbed>
                                                 </Tab.Pane>
-                                            )}
+                                            )}                                           
                                         </Tab.Content>
                                     </Col>
                                 </Row>
