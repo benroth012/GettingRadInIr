@@ -53,22 +53,23 @@ class Videos extends React.Component {
                                             )}
                                         </ListGroup>
                                     </Col>
-                                    <Col sm={8}>
-                                        <Tab.Content>
+                                    <Col sm={8}>                                  
+                                        <Tab.Content className='videoContainer'>
                                             {items.map((item, index) =>
-                                                <Tab.Pane eventKey={"#" + index}>
-                                                    <ResponsiveEmbed aspectRatio="16by9">
+                                                <Tab.Pane eventKey={"#" + index} >                                                        
                                                         <iframe src={item.link}
                                                                 frameborder='0'
                                                                 allow='autoplay; encrypted-media'
                                                                 allowfullscreen="0"
                                                                 title='video'
+                                                                className = 'responsive-iframe'
+                                                                
                                                         />
-                                                    </ResponsiveEmbed>
                                                 </Tab.Pane>
-                                            )}
+                                            )}                                           
                                         </Tab.Content>
                                     </Col>
+                                    
                                 </Row>
                             </Tab.Container>
                         </Col>
