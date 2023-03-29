@@ -130,6 +130,27 @@ li.link-wrapper > a.active {
 }
 
 /*
+    Mobile optimization of patient education document pages
+*/
+
+@media only screen and (max-device-width: 1000px) {
+ 
+    #EducationLayout {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #DocumentMenu {
+        padding-bottom: 20px;
+    }
+
+    #DocumentDisplay {
+        max-width: 100% !important;
+    }
+
+}
+
+/*
     Text Colors
 */
 
