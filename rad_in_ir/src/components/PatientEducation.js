@@ -144,8 +144,8 @@ class Education extends React.Component {
                     <Row style={{marginTop: `30px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px`}}>
                         <Col sm>
                             <Tab.Container id="list-group-tabs-example" defaultActiveKey="#0">
-                                <Row>
-                                    <Col sm={4}>
+                                <Row id = "EducationLayout">
+                                    <Col sm={4} id = "DocumentMenu">
                                         <ListGroup style={{marginBottom: `10px`}}>
                                             {pdfTitles.map((title, index) =>
                                                 <ListGroup.Item action href={"#" + index}>
@@ -154,11 +154,11 @@ class Education extends React.Component {
                                             )}
                                         </ListGroup>
                                     </Col>
-                                    <Col sm={8}>
+                                    <Col sm={8} id = "DocumentDisplay">
                                         <Tab.Content>
                                             {pdfLinks.map((link, index) =>
                                                 <Tab.Pane eventKey={"#" + index}>
-                                                    <iframe
+                                                    <iframe id = "iframe"
                                                         src={'https://drive.google.com/viewerng/viewer?url=' + link + '?pid=explorer&efh=false&a=v&chrome=false&embedded=true'}
                                                         width="90%" height="1400px"/>
                                                 </Tab.Pane>
