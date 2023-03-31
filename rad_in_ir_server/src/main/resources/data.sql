@@ -1,4 +1,5 @@
 /* LOCAL OPTION */
+/* NOTE FOR ADDING NEW STAFF, USE IMBB'S DIRECT LINKS OPTION*/
 
 INSERT INTO video (name, link) VALUES ('Port Placement','https://www.youtube.com/embed/TZBrlrYXKwA');
 INSERT INTO video (name, link) VALUES ('Port Removal','https://www.youtube.com/embed/wEKyRS_S44c');
@@ -12,25 +13,32 @@ INSERT INTO physician (name, link, imagename) VALUES ('Robyn Gebhard, MD', 'http
 INSERT INTO physician (name, link, imagename) VALUES ('Mamdouh Khayat, MD', 'https://wexnermedical.osu.edu/find-a-doctor/mamdouh-khayat-md-49338', 'https://i.ibb.co/gW4fDhk/Mamdouh-Kayat.jpg');
 INSERT INTO physician (name, link, imagename) VALUES ('James Kingsbury, MD', 'https://wexnermedical.osu.edu/find-a-doctor/james-kingsbury-md-96569', 'https://i.ibb.co/QCB4mf8/James-Kingsbury.jpg');
 INSERT INTO physician (name, link, imagename) VALUES ('Mina Makary, MD', 'https://wexnermedical.osu.edu/find-a-doctor/mina-makary-md-52237', 'https://i.ibb.co/ZxW6bJP/Mina-Makary.jpg');
-INSERT INTO physician (name, link, imagename) VALUES ('Ali Rikabi, MD', 'https://wexnermedical.osu.edu/find-a-doctor/ali-rikabi-md-4527', 'https://i.ibb.co/YBZx0p6/Ali-Rikabi.jpg');
+INSERT INTO physician (name, link, imagename) VALUES ('Ali Rikabi, MD', 'https://wexnermedical.osu.edu/find-a-doctor/ali-rikabi-md-4527', 'https://i.ibb.co/WH3vVvv/Dr-Ali-Rikibi.jpg');
 INSERT INTO physician (name, link, imagename) VALUES ('Alex da Silva, MD', 'https://wexnermedical.osu.edu/find-a-doctor/alexandre-da-silva-md-96575', 'https://i.ibb.co/rwwGvYn/Alex-de-Silva.jpg');
 INSERT INTO physician (name, link, imagename) VALUES ('Chrystal Webb, MD', '', 'https://i.ibb.co/swNXYwq/Webb.jpg');
+INSERT INTO physician (name, link, imagename) VALUES ('Kelvin Chan, MD', '', 'https://i.ibb.co/mFhWFq6/Dr-Kelvin-Chan.jpg');
 
 INSERT INTO provider (name, imagename) VALUES ('Andrea Amaddio-Kinney, APRN CNP', 'https://i.ibb.co/ZmNvksK/Amaddio-Kinney.jpg');
+INSERT INTO provider (name, imagename) VALUES ('Kathleen Banks, APRN CNP', 'https://i.ibb.co/zG7SD1y/Kathleen-Banks-APRN-CNP.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Alexandra Benson, PA-C', 'https://i.ibb.co/QkLPbZP/Benson.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Megan Brown, APRN CNP', 'https://i.ibb.co/KhHyqcN/Megan-Brown.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Chelsea Burdulis, APRN CNP', 'https://i.ibb.co/gZ9YL37/Chelsea.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Brandon Gano, PA-C', 'https://i.ibb.co/8g3WWyw/Gano.jpg');
+INSERT INTO provider (name, imagename) VALUES ('Jamie Huffman, APRN CNP', 'https://i.ibb.co/pKnCc0g/Jamie-Huffman-APRN-CNP.jpg');
+INSERT INTO provider (name, imagename) VALUES ('Jenny Guy, APRN CNP', 'https://i.ibb.co/vZB5Xvc/Chelsea-Burdulis-APRN-CNP.jpg');
+INSERT INTO provider (name, imagename) VALUES ('Alex Kegelmeyer APRN CNP', 'https://i.ibb.co/bvrGDC5/Alex-Kegelmeyer-APRN-CNP.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Patricia Little, APRN CNP', 'https://i.ibb.co/Y7pPqcp/Little.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Trish Malley, APRN CNP', 'https://i.ibb.co/0JXGBZf/Malley.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Sarah Mosberg, APRN CNP', 'https://i.ibb.co/z2bCq8K/Sarah.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Kelly Orman, APRN CNP', 'https://i.ibb.co/FVZy5N0/Orman.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Colin Reeder, APRN CNP', 'https://i.ibb.co/5cMWPtB/Reeder.jpg');
-INSERT INTO provider (name, imagename) VALUES ('Niki Reese,    PA-C', 'https://i.ibb.co/pwF4cMm/Reese.jpg');
+INSERT INTO provider (name, imagename) VALUES ('Nicole Reese, PA-C', 'https://i.ibb.co/pwF4cMm/Reese.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Michelle Schnurr, APRN CNP', 'https://i.ibb.co/k30YNzS/Schnurr.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Amy Schueler, APRN CNP CNS', 'https://i.ibb.co/jwNRKJT/Schueler.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Shana Straka, APRN CNP', 'https://i.ibb.co/DMgH8HW/Straka.jpg');
+INSERT INTO provider (name, imagename) VALUES ('Clare Sweeny, APRN CNP', 'https://i.ibb.co/PWb9vw4/Clare-Sweeny-APRN-CNP.jpg');
 INSERT INTO provider (name, imagename) VALUES ('Michael Yoder, APRN CNP', 'https://i.ibb.co/3r5Xvmt/Yoder.jpg');
+
 
 INSERT INTO faq (name, question, answer) VALUES ('Home', 'Pick from the categories to see frequently asked questions about that topic.', '');
 INSERT INTO faq (name, question, answer) VALUES ('Nephrostomy', 'What do I do if I nausea, vomiting, fever, or chills?', 'If you have these symptoms, please call our nurse coordinators, on call physician, or go to the nearest Emergency Room.');
