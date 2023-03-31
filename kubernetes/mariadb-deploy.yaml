@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: radinir-mariadb
+  labels:
+    app: radinir
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: radinir
+    tier: mariadb
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pv-claim
+  labels:
+    app: radinir
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radinir-mariadb
+  labels:
+    app: radinir
+spec:
+  selector:
+    matchLabels:
+      app: radinir
+      tier: mariadb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: radinir
+        tier: mariadb
+    spec:
+      containers:
+      - image: mariadb:latest
+        name: mariadb
+        env:
+        - name: MARIADB_USER
+          value: springuser
+        - name: MARIADB_PASSWORD
+          value: ThePassword
+        - name: MARIADB_ROOT_PASSWORD
+          value: ThePassword
+        - name: MARIADB_DATABASE
+          value: ir_app_data
+        ports:
+        - containerPort: 3306
+          name: radinir-mariadb
+          protocol: TCP
+        volumeMounts:
+        - name: mariadb-persistent-storage
+          mountPath: /var/lib/mariadb
+      volumes:
+      - name: mariadb-persistent-storage
+        persistentVolumeClaim:
+          claimName: mariadb-pv-claim

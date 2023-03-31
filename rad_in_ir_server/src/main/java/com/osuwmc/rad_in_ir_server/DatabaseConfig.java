@@ -1,5 +1,5 @@
 // DEPLOYMENT OPTION
-package com.osuwmc.rad_in_ir_server;
+/*package com.osuwmc.rad_in_ir_server;
 
 import com.zaxxer.hikari.*;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,3 +19,4 @@ public class DatabaseConfig {
       return new HikariDataSource(config);
   }
 }
+*/

@@ -54,10 +54,10 @@ public class MainController {
   private DBFileStorageService dbFileStorageService;
 
   // DEPLOYMENT OPTION
-  public static final String crossOriginName = "https://irapp-dev.org.ohio-state.edu";
+  //public static final String crossOriginName = "https://irapp-dev.org.ohio-state.edu";
   
   //LOCAL OPTION
-  //public static final String crossOriginName = "http://localhost:3000";
+  public static final String crossOriginName = "http://localhost:3000";
 
 
 
