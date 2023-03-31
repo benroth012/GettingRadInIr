@@ -90,7 +90,7 @@ class Education extends React.Component {
 
             <div className="App">
 
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
+                <Jumbotron className="jumbotron-special roboto white-text" id="education-jumbotron" style={{
                     backgroundImage: `url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center top`
@@ -101,11 +101,11 @@ class Education extends React.Component {
 
                 <CardGroup className="roboto">
                     <Container fluid>
-                        <Row style={{margin: `10px`}}>
+                        <Row id="procedure-grid" style={{margin: `10px`}}>
                             {items.map((item, index) =>
                                 <Col sm={4} style={{marginBottom: `20px`}}>
                                     <Card style={{height: `100%`}}>
-                                        <Card.Img variant="top" src={item.icon} style={{
+                                        <Card.Img id ="procedure-image" variant="top" src={item.icon} style={{
                                             width: 'auto',
                                             maxWidth: '90%',
                                             objectFit: 'contain',
