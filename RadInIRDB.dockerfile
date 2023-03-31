@@ -1,0 +1,6 @@
+FROM mariadb:latest
+
+ENV MARIADB_USER=springuser
+ENV MARIADB_PASSWORD=ThePassword
+ENV MARIADB_ROOT_PASSWORD=ThePassword
+ENV MARIADB_DATABASE=ir_app_data
