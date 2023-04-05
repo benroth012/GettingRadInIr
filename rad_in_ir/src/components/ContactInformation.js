@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardGroup, Col, Jumbotron, Row} from 'react-bootstrap';
+import {Card, CardGroup, Col, Row} from 'react-bootstrap';
 import '../App.css';
 import bgimage from '../Photography/Staff/OHIO_nursing1.png';
 
@@ -40,27 +40,27 @@ class ContactInformation extends React.Component {
         const {contacts} = this.state;
         return (
             <div>
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
+                <div className="jumbotron-special roboto white-text" style={{
                     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center top`,
-                    height: `10%`
+                    height: `fit-content`
                 }}>
                     <h1 style={{paddingTop: `10%`}}>Contact Information</h1>
-                    <p style={{fontSize: `1.5em`}}>
+                    <p style={{fontSize: `1.5em`, paddingBottom: `10%`}}>
                         Contact us with any questions or concerns using the numbers below.
                     </p>
-                </Jumbotron>
+                </div>
 
-                <h3 class="scarlet-text" style={{fontWeight: 'bold', fontSize: '40px', paddingBottom: '4vh'}}>*For
+                <h3 className="scarlet-text" style={{fontWeight: 'bold', fontSize: '40px', paddingBottom: '4vh'}}>*For
                     general, afterhours, or scheduling inquiries, please call <a className="footer-a"
                                                                                  href="tel:+1-614-293-2773">614-293-2773</a>
                 </h3>
 
                 <CardGroup className="roboto">
                     <Row style={{margin: `10px`, width: '100%'}}>
-                        {contacts.map((contact) =>
-                            <Col sm={4} style={{marginBottom: `20px`}}>
+                        {contacts.map((contact, index) =>
+                            <Col sm={4} key={index} style={{marginBottom: `20px`}}>
                                 <Card style={{height: `100%`}}>
                                     <Card.Img variant="top" src={contact.imageName} style={{
                                         height: '125px',

@@ -39,17 +39,17 @@ class Login extends React.Component {
         const {typedpassword, typedusername} = this.state;
         return (
             <div className="App">
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
+                <div className="jumbotron-special roboto white-text" style={{
                     backgroundImage: `url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center center`,
-                    height: `10%`
+                    height: `fit-content`
                 }}>
                     <h1 style={{paddingTop: `10%`}}>Welcome to Interventional Radiology</h1>
-                    <p style={{fontSize: `1.5em`}}>
+                    <p style={{fontSize: `1.5em`, paddingBottom: `10%`}}>
                         Admins may log in below.
                     </p>
-                </Jumbotron>
+                </div>
                 <Card className="App-card">
                     <Form>
                         <Form.Group controlId="formBasicEmail">

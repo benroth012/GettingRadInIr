@@ -45,27 +45,27 @@ class AdminHome extends React.Component {
         return (
             <div>
                 <div>
-                    <Jumbotron className="jumbotron-special roboto white-text" style={{
+                    <div className="jumbotron-special roboto white-text" style={{
                         backgroundImage: `url(${bgimage})`,
                         backgroundSize: `cover`,
                         backgroundPosition: `center top`,
-                        height: `10%`
+                        height: `fit-content`
                     }}>
-                        <h1 style={{paddingTop: `14%`}}>Welcome to Interventional Radiology</h1>
-                        <p style={{fontSize: `1.5em`}}>
+                        <h1 style={{ paddingTop: `10%` }}>Welcome to Interventional Radiology</h1>
+                        <p style={{ fontSize: `1.5em` }}>
                             We're here and ready to provide you care.
                         </p>
-                        <p style={{marginBottom: `0px`}}>
+                        <p style={{marginBottom: `0px`, paddingBottom: `10%`}}>
                             <Link to="/admincontactinformation=5UnAc6yzMP">
                                 <Button variant="primary" className="App-button"
                                         style={{paddingLeft: `50px`, paddingRight: `50px`, marginTop: `0px`}}>CONTACT
                                     US</Button>
                             </Link>
                         </p>
-                    </Jumbotron>
+                    </div>
                     <CardGroup className="roboto">
                         {cards.map((card, index) =>
-                            <Card>
+                            <Card key = {index}>
                                 <Card.Img variant="top" src={icons[index]} style={{
                                     width: `25%`,
                                     marginTop: `40px`,

@@ -1,6 +1,6 @@
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Footer} from './components/Footer';
 import {NavigationBar} from './components/NavigationBar';
 import {AdminFooter} from './components/AdminFooter';
@@ -41,64 +41,44 @@ import './App.css';
 window.apilink = "http://localhost:8080"
 window.currentlink = "http://localhost:3000"
 
-const PatientRoute = ({exact, path, component: Component}) => (
-    <Route exact={exact} path={path} render={(props) => (
-        <div>
-            <NavigationBar/>
-            <Component {...props}/>
-            < Footer/>
-        </div>
-    )}/>
-)
 
-const AdminRoute = ({exact, path, component: Component}) => (
-    <Route exact={exact} path={path} render={(props) => (
-        <div>
-            <AdminNavigationBar/>
-            <Component {...props}/>
-            <AdminFooter/>
-        </div>
-    )}/>
-)
 
-function App() {
+function App({callback}) {
     return (
-        <React.Fragment>
-            <div className="App">
-                <Router>
-                    <Switch>
-                        <PatientRoute exact path="/" component={PatientHome}/>
-                        <Route exact path="/adminlogin" component={Login}/>
-                        <AdminRoute exact path="/adminhome=4YTiwH60TL" component={AdminHome}/>
-                        <AdminRoute exact path="/adminvideos=ycrCjBDQCN" component={AdminVideos}/>
-                        <AdminRoute exact path="/adminproviderdirectory=sGw8bmlEn8" component={AdminProviderDirectory}/>
-                        <AdminRoute exact path="/admincontactinformation=5UnAc6yzMP"
-                                    component={AdminContactInformation}/>
-                        <AdminRoute exact path="/adminpatienteducation=cyRWLsfksP" component={AdminPatientEducation}/>
-                        <AdminRoute exact path="/adminfaq=gPilcl17WF" component={AdminFAQ}/>
-                        <PatientRoute exact path="/patienthome" component={PatientHome}/>
-                        <PatientRoute exact path="/providerdirectory" component={ProviderDirectory}/>
-                        <PatientRoute exact path="/contactinformation" component={ContactInformation}/>
-                        <PatientRoute exact path="/videos" component={Videos}/>
-                        <PatientRoute exact path="/patienteducation" component={PatientEducation}/>
-                        <PatientRoute exact path="/faq" component={PatientFAQ}/>
-                        <PatientRoute exact path="/implantedport" component={ImplantedPort}/>
-                        <PatientRoute exact path="/tace" component={TACE}/>
-                        <PatientRoute exact path="/aftertace" component={AfterTACE}/>
-                        <PatientRoute exact path="/nephrostomycatheter" component={NephrostomyCatheter}/>
-                        <PatientRoute exact path="/filterremovalhome" component={FilterRemovalHome}/>
-                        <PatientRoute exact path="/filterplacementhome" component={FilterPlacementHome}/>
-                        <PatientRoute exact path="/filterremovalbefore" component={FilterRemovalBefore}/>
-                        <PatientRoute exact path="/filterplacementbefore" component={FilterPlacementBefore}/>
-                        <PatientRoute exact path="/biliarydraincare" component={BiliaryDrainCare}/>
-                        <PatientRoute exact path="/tunneledcvc" component={TunneledCVC}/>
-                        <PatientRoute exact path="/generalpleurx" component={GeneralPleurX}/>
-                        <PatientRoute exact path="/pleurxhome" component={PleurXHome}/>
-                        <PatientRoute exact path="/pleurxfaq" component={PleurXFAQ}/>
-                    </Switch>
+        <Router >
+            <NavigationBar />
+                    <Routes>
+                        <Route ref ={callback} path="/" element={<PatientHome />}/>
+                        <Route exact path="/adminlogin" element={<Login/>}/>
+                        <Route exact path="/adminhome=4YTiwH60TL" element={<AdminHome/>}/>
+                        <Route exact path="/adminvideos=ycrCjBDQCN" element={<AdminVideos/>}/>
+                        <Route exact path="/adminproviderdirectory=sGw8bmlEn8" element={<AdminProviderDirectory/>}/>
+                        <Route exact path="/admincontactinformation=5UnAc6yzMP"
+                                    element={<AdminContactInformation/>}/>
+                        <Route exact path="/adminpatienteducation=cyRWLsfksP" element={<AdminPatientEducation/>}/>
+                        <Route exact path="/adminfaq=gPilcl17WF" element={<AdminFAQ/>}/>
+                        <Route exact path="/patienthome" element={<PatientHome/>}/>
+                        <Route exact path="/providerdirectory" element={<ProviderDirectory/>}/>
+                        <Route exact path="/contactinformation" element={<ContactInformation/>}/>
+                        <Route exact path="/videos" element={<Videos/>}/>
+                        <Route exact path="/patienteducation" element={<PatientEducation/>}/>
+                        <Route exact path="/faq" element={<PatientFAQ/>}/>
+                        <Route exact path="/implantedport" element={<ImplantedPort/>}/>
+                        <Route exact path="/tace" element={<TACE/>}/>
+                        <Route exact path="/aftertace" element={<AfterTACE/>}/>
+                        <Route exact path="/nephrostomycatheter" element={<NephrostomyCatheter/>}/>
+                        <Route exact path="/filterremovalhome" element={<FilterRemovalHome/>}/>
+                        <Route exact path="/filterplacementhome" element={<FilterPlacementHome/>}/>
+                        <Route exact path="/filterremovalbefore" element={<FilterRemovalBefore/>}/>
+                        <Route exact path="/filterplacementbefore" element={<FilterPlacementBefore/>}/>
+                        <Route exact path="/biliarydraincare" element={<BiliaryDrainCare/>}/>
+                        <Route exact path="/tunneledcvc" element={<TunneledCVC/>}/>
+                        <Route exact path="/generalpleurx" element={<GeneralPleurX/>}/>
+                        <Route exact path="/pleurxhome" element={<PleurXHome/>}/>
+                        <Route exact path="/pleurxfaq" element={<PleurXFAQ/>}/>
+                    </Routes>
+                    <Footer/>
                 </Router>
-            </div>
-        </React.Fragment>
     );
 }
 

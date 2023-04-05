@@ -137,17 +137,17 @@ class AdminContactInformation extends React.Component {
         const {error, isLoaded, contacts} = this.state;
         return (
             <div>
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
+                <div className="jumbotron-special roboto white-text" style={{
                     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center top`,
                     height: `10%`
                 }}>
                     <h1 style={{paddingTop: `10%`}}>Contact Information</h1>
-                    <p style={{fontSize: `1.5em`}}>
+                    <p style={{fontSize: `1.5em`, paddingBottom: `10%`}}>
                         Contact us with any questions or concerns using the numbers below.
                     </p>
-                </Jumbotron>
+                </div>
 
                 <h3 class="scarlet-text" style={{fontWeight: 'bold', fontSize: '40px', paddingBottom: '4vh'}}>*For
                     general, afterhours, or scheduling inquiries, please call <a className="footer-a"
@@ -156,8 +156,8 @@ class AdminContactInformation extends React.Component {
 
                 <CardGroup className="roboto">
                     <Row style={{margin: `10px`, width: '100%'}}>
-                        {contacts.map((contact) =>
-                            <Col sm={4} style={{marginBottom: `20px`}}>
+                        {contacts.map((contact, index) =>
+                            <Col key = {index} sm={4} style={{marginBottom: `20px`}}>
                                 <Card style={{height: `100%`}}>
                                     <Button variant="danger" style={{paddingLeft: `10px`, paddingRight: `10px`}}
                                             onClick={() => this.deleteContact(contact.id)}>x</Button>

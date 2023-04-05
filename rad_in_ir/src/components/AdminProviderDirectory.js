@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, CardGroup, Col, Form, Jumbotron, Modal, Row} from 'react-bootstrap';
+import {Button, Card, CardGroup, Col, Form, Modal, Row} from 'react-bootstrap';
 import '../App.css';
 import bgimage from '../Photography/darkened2.png';
 
@@ -262,23 +262,22 @@ class AdminProviderDirectory extends React.Component {
         }
         return (
             <div>
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
+                <div className="jumbotron-special roboto white-text" style={{
                     backgroundImage: `url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center top`,
-                    height: `10%`
+                    height: `fit-content`
                 }}>
-                    <h1 style={{paddingTop: `10%`}}>Provider Directory</h1>
-                    <p style={{fontSize: `1.5em`}}>
-                        Below are the names of the Interventional Radiology physicians and advanced practice providers.
-                    </p>
-                </Jumbotron>
+                    <h1 style={{ paddingTop: `10%` }}>Provider Directory</h1>
+                    <p style={{ fontSize: `1.5em`, paddingBottom: '10%' }}>Below are the names of the Interventional Radiology physicians and
+                        advanced practice providers.</p>
+                </div>
                 <h1 class='scarlet-text'>Physicians</h1>
 
                 <CardGroup className="roboto">
                     <Row style={{margin: `10px`, width: '100%'}}>
-                        {physicians.map((physician) =>
-                            <Col sm={4} style={{marginBottom: `20px`}}>
+                        {physicians.map((physician, index) =>
+                            <Col key ={index} sm={4} style={{marginBottom: `20px`}}>
                                 <Card style={{height: `100%`}}>
                                     <Button variant="danger" style={{paddingLeft: `10px`, paddingRight: `10px`}}
                                             onClick={() => this.deletePhysician(physician.id)}>x</Button>
@@ -352,8 +351,8 @@ class AdminProviderDirectory extends React.Component {
 
                 <CardGroup>
                     <Row style={{margin: '10px', width: '100%'}}>
-                        {providers.map((provider) =>
-                            <Col sm={4} style={{marginBottom: `20px`}}>
+                        {providers.map((provider, index) =>
+                            <Col key={index} sm={4} style={{marginBottom: `20px`}}>
                                 <Card style={{height: `100%`}}>
                                     <Button variant="danger" style={{paddingLeft: `10px`, paddingRight: `10px`}}
                                             onClick={() => this.deleteProvider(provider.id)}>x</Button>

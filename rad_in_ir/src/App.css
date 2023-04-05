@@ -126,6 +126,7 @@ li.link-wrapper > a.active {
 .jumbotron-special {
     height: 60vh;
     text-shadow: 1.5px 1.5px #333333;
+    text-align: center;
     border-radius: 0px;
 }
 

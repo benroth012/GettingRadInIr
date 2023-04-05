@@ -90,20 +90,21 @@ class Education extends React.Component {
 
             <div className="App">
 
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
-                    backgroundImage: `url(${bgimage})`,
+                <div className="jumbotron-special roboto white-text" style={{
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bgimage})`,
                     backgroundSize: `cover`,
-                    backgroundPosition: `center top`
+                    backgroundPosition: `center top`,
+                    height: 'fit-content'
                 }}>
                     <h1 style={{paddingTop: `10%`}}>Patient Education</h1>
-                    <p style={{fontSize: `1.5em`}}>Please select your procedure below.</p>
-                </Jumbotron>
+                    <p style={{fontSize: `1.5em`, paddingBottom: `10%`}}>Please select your procedure below.</p>
+                </div>
 
                 <CardGroup className="roboto">
                     <Container fluid>
                         <Row style={{margin: `10px`}}>
                             {items.map((item, index) =>
-                                <Col sm={4} style={{marginBottom: `20px`}}>
+                                <Col key={index} sm={4} style={{marginBottom: `20px`}}>
                                     <Card style={{height: `100%`}}>
                                         <Card.Img variant="top" src={item.icon} style={{
                                             width: 'auto',
@@ -157,7 +158,7 @@ class Education extends React.Component {
                                     <Col sm={8} id = "DocumentDisplay">
                                         <Tab.Content>
                                             {pdfLinks.map((link, index) =>
-                                                <Tab.Pane eventKey={"#" + index}>
+                                                <Tab.Pane key={index} eventKey={"#" + index}>
                                                     <iframe id = "iframe"
                                                         src={'https://drive.google.com/viewerng/viewer?url=' + link + '?pid=explorer&efh=false&a=v&chrome=false&embedded=true'}
                                                         width="90%" height="1400px"/>

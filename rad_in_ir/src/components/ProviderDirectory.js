@@ -64,23 +64,23 @@ class ProviderDirectory extends React.Component {
 
             <div>
 
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
+                <div className="jumbotron-special roboto white-text" style={{
                     backgroundImage: `url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center top`,
-                    height: `10%`
+                    height: `fit-content`
                 }}>
                     <h1 style={{paddingTop: `10%`}}>Provider Directory</h1>
-                    <p style={{fontSize: `1.5em`}}>Below are the names of the Interventional Radiology physicians and
+                    <p style={{ fontSize: `1.5em`, paddingBottom: `10%` }}>Below are the names of the Interventional Radiology physicians and
                         advanced practice providers.</p>
-                </Jumbotron>
+                </div>
 
-                <h1 class='scarlet-text'>Physicians</h1>
+                <h1 className='scarlet-text'>Physicians</h1>
 
                 <CardGroup className="roboto">
                     <Row style={{margin: `10px`, width: '100%'}}>
-                        {physicians.map((physician) =>
-                            <Col sm={4} style={{marginBottom: `20px`}}>
+                        {physicians.map((physician, index) =>
+                            <Col key = {index} sm={4} style={{marginBottom: `20px`}}>
                                 <Card style={{height: `100%`}}>
                                     <a className="footer-a" href={physician.link} target="_blank">
                                         <Card.Img variant="top" src={physician.imageName} style={{
@@ -104,12 +104,12 @@ class ProviderDirectory extends React.Component {
                     </Row>
                 </CardGroup>
 
-                <h1 class='scarlet-text'>Advanced Practice Providers</h1>
+                <h1 className='scarlet-text'>Advanced Practice Providers</h1>
 
                 <CardGroup className="roboto">
                     <Row style={{margin: '10px', width: '100%'}}>
-                        {providers.map((provider) =>
-                            <Col sm={4} style={{marginBottom: `20px`}}>
+                        {providers.map((provider, index) =>
+                            <Col key = {index} sm={4} style={{marginBottom: `20px`}}>
                                 <Card style={{height: `100%`}}>
                                     <Card.Img variant="top" src={provider.imageName} style={{
                                         height: '125px',

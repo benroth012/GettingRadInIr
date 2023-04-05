@@ -131,7 +131,7 @@ class AdminVideos extends React.Component {
                                             video.</h6>
                                         <ListGroup style={{marginBottom: `10px`}}>
                                             {items.map((item, index) =>
-                                                <ListGroup.Item action href={"#" + index}>
+                                                <ListGroup.Item key = {index} action href={"#" + index}>
                                                     <Row>
                                                         <Col sm={2}>
                                                             <Button variant="danger"
@@ -228,7 +228,7 @@ class AdminVideos extends React.Component {
                                     <Col sm={8}>
                                     <Tab.Content className='videoContainer'>
                                             {items.map((item, index) =>
-                                                <Tab.Pane eventKey={"#" + index} >                                                        
+                                                <Tab.Pane key = {index} eventKey={"#" + index} >                                                        
                                                         <iframe src={item.link}
                                                                 frameborder='0'
                                                                 allow='autoplay; encrypted-media'

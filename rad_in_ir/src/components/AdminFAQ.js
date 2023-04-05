@@ -192,15 +192,15 @@ class AdminFAQ extends React.Component {
         const {error, isLoaded, faqs, categories, tempFAQs} = this.state;
         return (
             <div className="App">
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
-                    backgroundImage: `url(${bgimage})`,
+                <div className="jumbotron-special roboto white-text" style={{
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center top`,
-                    height: `10%`
+                    height: `fit-content`
                 }}>
-                    <h1 style={{paddingTop: `10%`}}>FAQ</h1>
-                    <p style={{fontSize: `1.5em`}}>View Frequently Asked Questions Below.</p>
-                </Jumbotron>
+                    <h1 style={{ paddingTop: `10%` }}>FAQ</h1>
+                    <p style={{ fontSize: `1.5em`, paddingBottom: `10%` }}>View Frequently Asked Questions Below.</p>
+                </div>
 
                 <Container fluid>
                     <Row style={{marginTop: `30px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px`}}>
@@ -210,7 +210,7 @@ class AdminFAQ extends React.Component {
                                     <Col sm={4}>
                                         <ListGroup style={{marginBottom: `10px`}}>
                                             {categories.map((category, index) =>
-                                                <ListGroup.Item onClick={() => this.handleFAQS(category.name)} action
+                                                <ListGroup.Item key = {index} onClick={() => this.handleFAQS(category.name)} action
                                                                 href={"#" + index}>
                                                     <Row>
                                                         <Col sm={2}>
@@ -229,11 +229,11 @@ class AdminFAQ extends React.Component {
                                     <Col sm={8}>
                                         <Tab.Content>
                                             {faqs.map((faq, index) =>
-                                                <Tab.Pane eventKey={"#" + index}>
+                                                <Tab.Pane key= {index} eventKey={"#" + index}>
                                                     <CardGroup className="roboto">
                                                         <Col>
                                                             {tempFAQs.map((tfaq, index) =>
-                                                                <Card>
+                                                                <Card key= {index}>
                                                                     <Button variant="danger" style={{
                                                                         paddingLeft: `10px`,
                                                                         paddingRight: `10px`

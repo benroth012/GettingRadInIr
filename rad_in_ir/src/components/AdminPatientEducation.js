@@ -1,4 +1,4 @@
-import {Button, Card, CardGroup, Col, Container, Form, Jumbotron, ListGroup, Modal, Row, Tab} from 'react-bootstrap';
+import {Button, Card, CardGroup, Col, Container, Form, ListGroup, Modal, Row, Tab} from 'react-bootstrap';
 import bgimage from '../Photography/Buildings/TheJames2.jpg';
 import React from 'react';
 
@@ -163,21 +163,21 @@ class AdminPatientEducation extends React.Component {
         const {error, isLoaded, items} = this.state;
         return (
             <div className="App">
-                <Jumbotron className="jumbotron-special roboto white-text" style={{
-                    backgroundImage: `url(${bgimage})`,
+                <div className="jumbotron-special roboto white-text" style={{
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center top`,
-                    height: `10%`
+                    height: 'fit-content'
                 }}>
-                    <h1 style={{paddingTop: `10%`}}>Patient Education</h1>
-                    <p style={{fontSize: `1.5em`}}>Please select your procedure below.</p>
-                </Jumbotron>
+                    <h1 style={{ paddingTop: `10%` }}>Patient Education</h1>
+                    <p style={{ fontSize: `1.5em`, paddingBottom: `10%` }}>Please select your procedure below.</p>
+                </div>
 
                 <CardGroup className="roboto">
                     <Container fluid>
                         <Row style={{margin: `10px`}}>
                             {items.map((item, index) =>
-                                <Col sm={4} style={{marginBottom: `20px`}}>
+                                <Col key = {index} sm={4} style={{marginBottom: `20px`}}>
                                     <Card style={{height: `100%`}}>
                                         <Card.Header style={{textAlign: `right`}}><Button variant="danger" style={{
                                             paddingLeft: `10px`,
@@ -264,7 +264,7 @@ class AdminPatientEducation extends React.Component {
                                     <Col sm={4}>
                                         <ListGroup style={{marginBottom: `10px`}}>
                                             {pdfTitles.map((title, index) =>
-                                                <ListGroup.Item action href={"#" + index}>
+                                                <ListGroup.Item key ={index} action href={"#" + index}>
                                                     {title}
                                                 </ListGroup.Item>
                                             )}
@@ -273,7 +273,7 @@ class AdminPatientEducation extends React.Component {
                                     <Col sm={8}>
                                         <Tab.Content>
                                             {pdfLinks.map((link, index) =>
-                                                <Tab.Pane eventKey={"#" + index}>
+                                                <Tab.Pane key= {index} eventKey={"#" + index}>
                                                     <iframe
                                                         src={'https://drive.google.com/viewerng/viewer?url=' + link + '?pid=explorer&efh=false&a=v&chrome=false&embedded=true'}
                                                         width="90%" height="1400px"/>
