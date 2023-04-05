@@ -114,6 +114,7 @@ class Education extends React.Component {
                                             display: 'block',
                                             marginLeft: `auto`,
                                             marginRight: `auto`,
+                                            marginBottom: 'auto',
                                             height: '520px'
                                         }}/>
                                         <Card.Body>
@@ -123,8 +124,8 @@ class Education extends React.Component {
                                                 className="App-button" style={{
                                             paddingLeft: `50px`,
                                             paddingRight: `50px`,
-                                            height: '20%',
-                                            marginBottom: '5px'
+                                            height: '10vh',
+                                            marginBottom: '10px'
                                         }}>Learn More</Button>
                                     </Card>
                                 </Col>
