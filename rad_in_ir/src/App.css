@@ -134,7 +134,7 @@ li.link-wrapper > a.active {
     Mobile optimization of patient education document pages
 */
 
-@media only screen and (max-device-width: 1000px) {
+@media only screen and (max-device-width: 1300px) {
  
     #EducationLayout {
         flex-direction: column;

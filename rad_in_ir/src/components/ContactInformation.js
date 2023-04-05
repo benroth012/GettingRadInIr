@@ -52,7 +52,7 @@ class ContactInformation extends React.Component {
                     </p>
                 </div>
 
-                <h3 className="scarlet-text" style={{fontWeight: 'bold', fontSize: '40px', paddingBottom: '4vh'}}>*For
+                <h3 className="scarlet-text" style={{fontWeight: 'bold', fontSize: '40px', paddingBottom: '1vh'}}>*For
                     general, afterhours, or scheduling inquiries, please call <a className="footer-a"
                                                                                  href="tel:+1-614-293-2773">614-293-2773</a>
                 </h3>

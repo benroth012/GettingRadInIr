@@ -110,7 +110,7 @@ class Education extends React.Component {
                                             width: 'auto',
                                             maxWidth: '90%',
                                             objectFit: 'contain',
-                                            marginTop: `40px`,
+                                            marginTop: `20px`,
                                             display: 'block',
                                             marginLeft: `auto`,
                                             marginRight: `auto`,
@@ -149,13 +149,13 @@ class Education extends React.Component {
                                     <Col sm={4} id = "DocumentMenu">
                                         <ListGroup style={{marginBottom: `10px`}}>
                                             {pdfTitles.map((title, index) =>
-                                                <ListGroup.Item action href={"#" + index}>
+                                                <ListGroup.Item key = {index} action href={"#" + index}>
                                                     {title}
                                                 </ListGroup.Item>
                                             )}
                                         </ListGroup>
                                     </Col>
-                                    <Col sm={8} id = "DocumentDisplay">
+                                    <Col id = "DocumentDisplay">
                                         <Tab.Content>
                                             {pdfLinks.map((link, index) =>
                                                 <Tab.Pane key={index} eventKey={"#" + index}>
