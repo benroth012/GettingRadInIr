@@ -101,11 +101,11 @@ class PatientFAQ extends React.Component {
                     height: `fit-content`
                 }}>
                     <h1 style={{paddingTop: `10%`}}>FAQ</h1>
-                    <p style={{ fontSize: `1.5em`, paddingBottom: `10%` }}>View Frequently Asked Questions Below.</p>
+                    <p style={{fontSize: `1.5em`, paddingBottom: `10%`}}>View Frequently Asked Questions Below.</p>
                 </div>
 
                 <Container fluid>
-                    <Row style={{marginTop: `30px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px`}}>
+                    <Row style={{marginTop: `10px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px`}}>
                         <Col sm>
                             <Tab.Container id="list-group-tabs-example" defaultActiveKey="#0">
                                 <Row>

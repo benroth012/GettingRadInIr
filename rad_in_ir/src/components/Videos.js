@@ -38,7 +38,7 @@ class Videos extends React.Component {
         return (
             <div className="App">
                 <Container fluid>
-                    <Row style={{marginTop: `30px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px`}}>
+                    <Row style={{marginTop: `10px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px`}}>
                         <Col sm>
                             <Tab.Container id="list-group-tabs-example" defaultActiveKey="#0">
                                 <Row>
