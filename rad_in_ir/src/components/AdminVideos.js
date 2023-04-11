@@ -1,7 +1,5 @@
-import { Col, Row, Container, ResponsiveEmbed, Tab, ListGroup, Button, Modal, Form } from 'react-bootstrap';
-import { Link } from "react-router-dom";
-import bgimage from '../Photography/Buildings/TheJames2.jpg';
-import React, { Component } from 'react';
+import {Button, Col, Container, Form, ListGroup, Modal, ResponsiveEmbed, Row, Tab} from 'react-bootstrap';
+import React from 'react';
 
 class AdminVideos extends React.Component {
     constructor(props) {
@@ -47,11 +45,11 @@ class AdminVideos extends React.Component {
     }
 
     handleShowHideAdd() {
-        this.setState({ showHideAdd: !this.state.showHideAdd })
+        this.setState({showHideAdd: !this.state.showHideAdd})
     }
 
     handleShowHideEdit() {
-        this.setState({ showHideEdit: !this.state.showHideEdit })
+        this.setState({showHideEdit: !this.state.showHideEdit})
     }
 
     myNameHandler(event) {
@@ -91,8 +89,11 @@ class AdminVideos extends React.Component {
         if (this.state.videoName.length > 0 && this.state.videoLink.length > 0) {
             var videoLinkParts = this.state.videoLink.split("=")
             var tLink = "";
-            if(this.state.videoLink.includes("embed")) {tLink = this.state.videoLink}
-            else {tLink = 'https://www.youtube.com/embed/' + videoLinkParts[videoLinkParts.length - 1]}
+            if (this.state.videoLink.includes("embed")) {
+                tLink = this.state.videoLink
+            } else {
+                tLink = 'https://www.youtube.com/embed/' + videoLinkParts[videoLinkParts.length - 1]
+            }
             fetch(window.apilink + '/server/addvideo', {
                 method: 'POST',
                 headers: {
@@ -117,23 +118,28 @@ class AdminVideos extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, items } = this.state;
+        const {error, isLoaded, items} = this.state;
         return (
             <div className="App">
                 <Container fluid>
-                    <Row style={{ marginTop: `30px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px` }}>
+                    <Row style={{marginTop: `30px`, marginLeft: `10px`, marginRight: `10px`, marginBottom: `40px`}}>
                         <Col sm>
                             <Tab.Container id="list-group-tabs-example" defaultActiveKey="#0">
                                 <Row>
-                                    <Col sm={4} style={{ marginBottom: `10px` }}>
-                                        <h6>Select your procedure below to view our corresponding educational video.</h6>
-                                        <ListGroup style={{ marginBottom: `10px` }}>
+                                    <Col sm={4} style={{marginBottom: `10px`}}>
+                                        <h6>Select your procedure below to view our corresponding educational
+                                            video.</h6>
+                                        <ListGroup style={{marginBottom: `10px`}}>
                                             {items.map((item, index) =>
-                                                <ListGroup.Item action href={"#" + index}>
+                                                <ListGroup.Item key = {index} action href={"#" + index}>
                                                     <Row>
                                                         <Col sm={2}>
-                                                            <Button variant="danger" style={{ paddingLeft: `10px`, paddingRight: `10px` }} onClick={() => this.deleteVideo(item.id)}>x</Button>
-                                                            <Button variant="secondary" style={{ paddingLeft: `10px`, paddingRight: `10px` }} onClick={() => this.editVideo(item)}>e</Button>
+                                                            <Button variant="danger"
+                                                                    style={{paddingLeft: `10px`, paddingRight: `10px`}}
+                                                                    onClick={() => this.deleteVideo(item.id)}>x</Button>
+                                                            <Button variant="secondary"
+                                                                    style={{paddingLeft: `10px`, paddingRight: `10px`}}
+                                                                    onClick={() => this.editVideo(item)}>e</Button>
                                                         </Col>
                                                         <Col sm={10}>
                                                             {item.name}
@@ -144,8 +150,8 @@ class AdminVideos extends React.Component {
                                         </ListGroup>
 
 
-
-                                        <Button variant="success" style={{ paddingLeft: `40px`, paddingRight: `40px` }} onClick={() => this.handleShowHideAdd()}>Add New Video</Button>
+                                        <Button variant="success" style={{paddingLeft: `40px`, paddingRight: `40px`}}
+                                                onClick={() => this.handleShowHideAdd()}>Add New Video</Button>
                                         <Modal
                                             size="lg"
                                             aria-labelledby="contained-modal-title-vcenter"
@@ -161,23 +167,26 @@ class AdminVideos extends React.Component {
                                                 <Modal.Body>
                                                     <Form.Group controlId="formName">
                                                         <Form.Label>Video Title</Form.Label>
-                                                        <Form.Control type="name" placeholder="Enter Video Title" onChange={this.myNameHandler} />
+                                                        <Form.Control type="name" placeholder="Enter Video Title"
+                                                                      onChange={this.myNameHandler}/>
                                                     </Form.Group>
                                                     <Form.Group controlId="formLink">
                                                         <Form.Label>Video Link</Form.Label>
-                                                        <Form.Control type="link" placeholder="Enter Video Link" onChange={this.myLinkHandler} />
+                                                        <Form.Control type="link" placeholder="Enter Video Link"
+                                                                      onChange={this.myLinkHandler}/>
                                                         <Form.Text className="text-muted">
                                                             Must be from YouTube
                                                         </Form.Text>
                                                     </Form.Group>
                                                 </Modal.Body>
                                                 <Modal.Footer>
-                                                    <Button onClick={() => this.handleShowHideAdd()} variant="warning">Cancel</Button>
-                                                    <Button onClick={() => this.handleShowHideAdd()} variant="success" type="submit">Submit</Button>
+                                                    <Button onClick={() => this.handleShowHideAdd()}
+                                                            variant="warning">Cancel</Button>
+                                                    <Button onClick={() => this.handleShowHideAdd()} variant="success"
+                                                            type="submit">Submit</Button>
                                                 </Modal.Footer>
                                             </Form>
                                         </Modal>
-
 
 
                                         <Modal
@@ -195,37 +204,41 @@ class AdminVideos extends React.Component {
                                                 <Modal.Body>
                                                     <Form.Group controlId="formName">
                                                         <Form.Label>Video Title</Form.Label>
-                                                        <Form.Control type="name" placeholder={this.state.tempName} onChange={this.myNameHandler} />
+                                                        <Form.Control type="name" placeholder={this.state.tempName}
+                                                                      onChange={this.myNameHandler}/>
                                                     </Form.Group>
                                                     <Form.Group controlId="formLink">
                                                         <Form.Label>Video Link</Form.Label>
-                                                        <Form.Control type="link" placeholder={this.state.tempLink} onChange={this.myLinkHandler} />
+                                                        <Form.Control type="link" placeholder={this.state.tempLink}
+                                                                      onChange={this.myLinkHandler}/>
                                                         <Form.Text className="text-muted">
                                                             Must be from YouTube
                                                         </Form.Text>
                                                     </Form.Group>
                                                 </Modal.Body>
                                                 <Modal.Footer>
-                                                    <Button onClick={() => this.handleCancel()} variant="warning">Cancel</Button>
-                                                    <Button onClick={() => this.handleShowHideEdit()} variant="success" type="submit">Submit</Button>
+                                                    <Button onClick={() => this.handleCancel()}
+                                                            variant="warning">Cancel</Button>
+                                                    <Button onClick={() => this.handleShowHideEdit()} variant="success"
+                                                            type="submit">Submit</Button>
                                                 </Modal.Footer>
                                             </Form>
                                         </Modal>
                                     </Col>
                                     <Col sm={8}>
-                                        <Tab.Content>
+                                    <Tab.Content className='videoContainer'>
                                             {items.map((item, index) =>
-                                                <Tab.Pane eventKey={"#" + index}>
-                                                    <ResponsiveEmbed aspectRatio="16by9">
+                                                <Tab.Pane key = {index} eventKey={"#" + index} >                                                        
                                                         <iframe src={item.link}
-                                                            frameBorder='0'
-                                                            allow='autoplay; encrypted-media'
-                                                            allowFullScreen="0"
-                                                            title='video'
+                                                                frameborder='0'
+                                                                allow='autoplay; encrypted-media'
+                                                                allowfullscreen="0"
+                                                                title='video'
+                                                                className = 'responsive-iframe'
+                                                                
                                                         />
-                                                    </ResponsiveEmbed>
                                                 </Tab.Pane>
-                                            )}
+                                            )}                                           
                                         </Tab.Content>
                                     </Col>
                                 </Row>
