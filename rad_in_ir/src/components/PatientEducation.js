@@ -102,11 +102,11 @@ class Education extends React.Component {
 
                 <CardGroup className="roboto">
                     <Container fluid>
-                        <Row style={{margin: `10px`}}>
+                        <Row id="procedure-grid" style={{margin: `10px`}}>
                             {items.map((item, index) =>
                                 <Col key={index} sm={4} style={{marginBottom: `20px`}}>
                                     <Card style={{height: `100%`}}>
-                                        <Card.Img variant="top" src={item.icon} style={{
+                                        <Card.Img id ="procedure-image" variant="top" src={item.icon} style={{
                                             width: 'auto',
                                             maxWidth: '90%',
                                             objectFit: 'contain',

@@ -149,6 +149,14 @@ li.link-wrapper > a.active {
         max-width: 100% !important;
     }
 
+    #procedure-image {
+        height: 40% !important;
+    }
+
+    #education-jumbotron {
+        height: 100% !important;
+    }
+
 }
 
 /*
