@@ -204,12 +204,10 @@ public class MainControllerTests {
     assertThat(c).isNotEmpty();
   }
 
-  /*
   @Test
   public void testAddEducation() throws Exception {
     Education ed = new Education();
     ed.setName("Test Education");
-    ed.setLinks(new String[]{"test_pdf.pdf", "test_pdf.pdf"});
     ed.setIcon("test_icon.jpg");
     
     assertThat(controller.addNewEducation(ed).equals("Saved")).isTrue();
@@ -219,7 +217,6 @@ public class MainControllerTests {
   public void testAddEducation2() throws Exception {
     Education ed = new Education();
     ed.setName("Test Education 2");
-    ed.setLinks(new String[]{"test_pdf2.pdf", "test_pdf2.pdf"});
     ed.setIcon("test_icon2.svg");
     
     assertThat(controller.addNewEducation(ed).equals("Saved")).isTrue();
@@ -229,7 +226,6 @@ public class MainControllerTests {
   public void testDeleteEducation() throws Exception {
     Education ed = new Education();
     ed.setName("Test Education");
-    ed.setLinks(new String[]{"test_pdf.pdf", "test_pdf.pdf"});
     ed.setIcon("test_icon.jpg");
 
     controller.addNewEducation(ed);
@@ -241,7 +237,6 @@ public class MainControllerTests {
   public void testDeleteEducation2() throws Exception {
     Education ed = new Education();
     ed.setName("Test Education 2");
-    ed.setLinks(new String[]{"test_pdf2.pdf", "test_pdf2.pdf"});
     ed.setIcon("test_icon2.svg");
 
     controller.addNewEducation(ed);
@@ -255,7 +250,6 @@ public class MainControllerTests {
 
     assertThat(ed).isNotEmpty();
   }
-  */
 
   @Test
   public void testAddCard() throws Exception {
