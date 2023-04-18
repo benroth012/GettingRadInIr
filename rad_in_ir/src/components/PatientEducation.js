@@ -1,6 +1,7 @@
 import {Button, Card, CardGroup, Col, Container, Jumbotron, ListGroup, Row, Tab} from 'react-bootstrap';
 import bgimage from '../Photography/Buildings/TheJames2.jpg';
 import React from 'react';
+import { withRouter } from "react-router";
 
 class Education extends React.Component {
     constructor(props) {
@@ -17,6 +18,8 @@ class Education extends React.Component {
 
         this.handleButton = this.handleButton.bind(this);
         this.handlePDFs = this.handlePDFs.bind(this);
+        this.backButton = this.backButton.bind(this);
+
     }
 
     componentDidMount() {
@@ -138,6 +141,14 @@ class Education extends React.Component {
 
     otherView() {
         const {error, isLoaded, items, buttonPressed, pdfLinks, pdfTitles} = this.state;
+
+        const { match, location, history } = this.props;
+
+        // backButton = () => {
+        //     this.props.history.push('/patienthome')
+        //     this.props.history.push('/patienteducation')
+        // }
+
         return (
             <div className='App'>
                 <Container fluid>
@@ -153,6 +164,7 @@ class Education extends React.Component {
                                                 </ListGroup.Item>
                                             )}
                                         </ListGroup>
+                                        <Button className="PatientEdBack" onClick={this.backButton}>Back</Button>
                                     </Col>
                                     <Col sm={8} id = "DocumentDisplay">
                                         <Tab.Content>
@@ -172,6 +184,10 @@ class Education extends React.Component {
                 </Container>
             </div>
         );
+    }
+
+    backButton() {
+        window.location.reload()
     }
 
     render() {
