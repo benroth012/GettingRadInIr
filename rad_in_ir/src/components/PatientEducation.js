@@ -1,6 +1,7 @@
 import {Button, Card, CardGroup, Col, Container, Jumbotron, ListGroup, Row, Tab} from 'react-bootstrap';
 import bgimage from '../Photography/Buildings/TheJames2.jpg';
 import React from 'react';
+import { withRouter } from "react-router";
 
 class Education extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class Education extends React.Component {
 
         this.handleButton = this.handleButton.bind(this);
         this.handlePDFs = this.handlePDFs.bind(this);
+        this.backButton = this.backButton.bind(this);
     }
 
     componentDidMount() {
@@ -90,7 +92,7 @@ class Education extends React.Component {
 
             <div className="App">
 
-                <div className="jumbotron-special roboto white-text" style={{
+                <div className="jumbotron-special roboto white-text" id="education-jumbotron" style={{
                     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bgimage})`,
                     backgroundSize: `cover`,
                     backgroundPosition: `center top`,
@@ -102,11 +104,11 @@ class Education extends React.Component {
 
                 <CardGroup className="roboto">
                     <Container fluid>
-                        <Row style={{margin: `10px`}}>
+                        <Row id="procedure-grid" style={{margin: `10px`}}>
                             {items.map((item, index) =>
                                 <Col key={index} sm={4} style={{marginBottom: `20px`}}>
                                     <Card style={{height: `100%`}}>
-                                        <Card.Img variant="top" src={item.icon} style={{
+                                        <Card.Img id="procedure-image" variant="top" src={item.icon} style={{
                                             width: 'auto',
                                             maxWidth: '90%',
                                             objectFit: 'contain',
@@ -140,6 +142,7 @@ class Education extends React.Component {
 
     otherView() {
         const {error, isLoaded, items, buttonPressed, pdfLinks, pdfTitles} = this.state;
+        const {match, location, history} = this.props;
         return (
             <div className='App'>
                 <Container fluid>
@@ -155,6 +158,7 @@ class Education extends React.Component {
                                                 </ListGroup.Item>
                                             )}
                                         </ListGroup>
+                                        <Button className='PatientEdBack' onClick={this.backButton}>Back</Button>
                                     </Col>
                                     <Col id = "DocumentDisplay">
                                         <Tab.Content>
@@ -174,6 +178,10 @@ class Education extends React.Component {
                 </Container>
             </div>
         );
+    }
+
+    backButton() {
+        window.location.reload()
     }
 
     render() {

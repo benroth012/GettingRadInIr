@@ -130,6 +130,22 @@ li.link-wrapper > a.active {
     border-radius: 0px;
 }
 
+.PatientEdBack {
+    color: #bb0000;
+    border-color: #bb0000;
+    padding: 8px;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.PatientEdBack:hover {
+    color: white;
+    border-color: #bb0000;
+    background-color: #bb0000;
+}
+
 /*
     Mobile optimization of patient education document pages
 */
@@ -147,6 +163,14 @@ li.link-wrapper > a.active {
 
     #DocumentDisplay {
         max-width: 100% !important;
+    }
+
+    #procedure-image {
+        height: 40% !important;
+    }
+
+    #education-jumbotron {
+        height: 100% !important;
     }
 
 }
