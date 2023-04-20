@@ -1,6 +1,7 @@
 import {Button, Card, Form, Jumbotron} from 'react-bootstrap';
 import bgimage from '../Photography/Buildings/TheJames2.jpg';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class Login extends React.Component {
     handleSubmit(event) {
 
         if (this.state.typedusername === this.state.username && this.state.typedpassword === this.state.password) {
-            this.props.history.push('/adminhome=4YTiwH60TL')
+            this.props.navigate('/adminhome=4YTiwH60TL')
         }
     }
 
@@ -69,4 +70,7 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default function LoginWithNavigate () {
+    const navigate = useNavigate()
+    return <Login navigate={navigate} />
+}
