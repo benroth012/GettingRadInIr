@@ -1,22 +1,39 @@
 version: "3"
 services:
-  backend:
-    image: "gettingradinir-backend:latest"
+  radinir-frontend:
+    image: "radinir-frontend:0.0.1"
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  radinir-backend:
+    image: "radinir-backend:0.0.1"
+    restart: on-failure
+    depends_on:
+      - radinir-db
     environment:
-      - MYSQL_HOST=db
+      - MYSQL_HOST=radinir-db
     ports:
       - "8080:8080"
-    networks:
-      - dblink
-  db:
+    links:
+      - radinir-db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  radinir-db:
     image: "mariadb:latest"
     environment:
       - MARIADB_USER=springuser
       - MARIADB_PASSWORD=ThePassword
       - MARIADB_ROOT_PASSWORD=ThePassword
       - MARIADB_DATABASE=ir_app_data
-    networks:
-      - dblink
-
-networks:
-  dblink:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3306"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
